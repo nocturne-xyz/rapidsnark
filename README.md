@@ -25,6 +25,12 @@ npx task createFieldSources
 npx task buildProver
 ````
 
+## Building on non linux/amd64 platforms
+
+A dockerfile is included based off of `ubuntu:latest`. Use this as a base for whatever you plan to do with it.
+
+On apple silicton, you need to build the container with `docker buildx --platform linux/amd64`
+
 ## Building proof
 
 You have a full prover compiled in the build directory.
