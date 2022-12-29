@@ -19,13 +19,3 @@ RUN npx task createFieldSources
 
 # build the provder
 RUN npx task buildProver
-
-FROM ubuntu
-
-WORKDIR /rapidsnark
-
-RUN apt update -y && apt install -y build-essential libgmp-dev libsodium-dev nasm
-
-COPY --from=builder /rapidsnark/build/prover /usr/local/bin/rapidsnark
-
-CMD ["rapidsnark"]
