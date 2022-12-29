@@ -12,10 +12,15 @@ COPY ./depends ./depends
 COPY ./src ./src
 
 # install the node deps
-RUN npm install && git submodule init && git submodule update
+RUN npm install
+
+# pull submodules
+RUN git submodule init && git submodule update
 
 # build the fields
 RUN npx task createFieldSources
 
 # build the provder
 RUN npx task buildProver
+
+CMD ["/rapidsnark/build/prover"]
