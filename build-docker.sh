@@ -2,6 +2,8 @@
 
 set -e
 
+git submodule init
+git submodule update
 if [[ $(uname -m) == 'arm64' ]]; then
 	echo "dected arm64, building using docker buildx..."
 

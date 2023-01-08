@@ -13,7 +13,6 @@ COPY depends ./depends
 COPY src ./src
 
 RUN npm install
-RUN git submodule init && git submodule update
 RUN npx task createFieldSources
 RUN npx task buildProver
 
