@@ -1,5 +1,5 @@
 # Build the prover
-FROM node:16
+FROM node:18.12.1
 
 WORKDIR /rapidsnark
 
